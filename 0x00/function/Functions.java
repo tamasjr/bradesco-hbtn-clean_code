@@ -16,7 +16,10 @@ public class Functions {
     public void saveUser(User user) {
     }
 
-    public User saveUser(User user) {
+    public User saveUser(User user, boolean isAdmin){
+        if(user.isAdmin){
+            user.setRole(user);
+        }
         return userRepository.save(user);
     }
 
